@@ -37,7 +37,8 @@ class TPQueue {
       return;
     }
     QueueNode* currentNode = queueHead;
-    while (currentNode->nextNode && currentNode->nextNode->queueData.prior >= item.prior) {
+    while (currentNode->nextNode &&
+           currentNode->nextNode->queueData.prior >= item.prior) {
       currentNode = currentNode->nextNode;
     }
     newNode->nextNode = currentNode->nextNode;
@@ -53,6 +54,14 @@ class TPQueue {
     queueHead = queueHead->nextNode;
     delete nodeToRemove;
     return tempValue;
+  }
+
+  void push(const T& item) {
+    enqueue(item);
+  }
+
+  T pop() {
+    return dequeue(); 
   }
 };
 
