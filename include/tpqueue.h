@@ -60,7 +60,7 @@ class TPQueue {
   }
 
   T pop() {
-    return dequeue(); 
+    return dequeue();
   }
 };
 
